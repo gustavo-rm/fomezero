@@ -7,6 +7,11 @@ class DishesController < ApplicationController
     @dishes = Dish.all
   end
 
+  #Homepage
+  def homepage
+    @meals = Meal.all.order("description")
+  end
+
   # GET /dishes/1
   # GET /dishes/1.json
   def show
@@ -69,6 +74,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:description, :price, :preparationtime)
+      params.require(:dish).permit(:description, :price, :preparationtime, :restaurant_id, ingredient_ids: [])
     end
 end
