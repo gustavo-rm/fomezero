@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Homepage</h1>
+
+<% @dishes.each do |dish| %>
+
+  <p><%= dish.description %></p>
+  <h4>Preço: <%= dish.price %></h3>
+  <h4>Tempo de Preparo: <%= dish.preparationtime %></h3>
+  <h4>Ingredientes: <%= dish.ingredients.description %> </h4>
+  <small>Data: <%= dish.created_at %> </small>
+
+  <hr/>
+
+<% end %>
