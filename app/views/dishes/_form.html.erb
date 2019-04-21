@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :restaurant_id %>
-    <%= form.select :restaurant_id, Restaurant.all.collect {|restaurant| [restaurant.name, restaurant.id]}, {include_blank: true} %>
+    <%= form.select :restaurant_id, Restaurant.all.collect {|restaurant| [restaurant.name, restaurant.id]} %>
   </div>
 
   <div class="field">
     <label>Ingredientes</label><br>
-    <%= form.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description, checked: dish.ingredients.map(&:id)) do |i| %>
+    <%= form.collection_check_boxes(:ingredient_ids, Ingredient.all.order(:description), :id, :description, checked: dish.ingredients.map(&:id)) do |i| %>
       <%= i.check_box %> <%= i.label %>
     <% end %>
   </div>

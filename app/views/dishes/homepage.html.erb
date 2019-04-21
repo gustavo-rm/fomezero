@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<% Restaurant.all.each do |restaurant| %>
 <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Página Inicial</h1>
-      <% Restaurant.all.each do |restaurant| %>
+      <h1 class="display-3">Pratos</h1>
        <h2>Restaurante <%= restaurant.name %></h2>
         <p>Endereço: <%= restaurant.address %></p>
 		<p>Telefone: <%= restaurant.phone %></p>
-		<% end %>
     </div>
  </div>
 
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-		<% @dishes.each do |dish| %>
+		<% restaurant.dishes.each do |dish| %>
 		      <div class="col-md-4">
 		        <h2><%= dish.description %></h2>
 		        <p>Preço: R$<%= dish.price %> </p>
@@ -27,6 +26,6 @@
 	</div>
 <hr>
 </div> <!-- /container -->
-
+<% end %>
 
 
