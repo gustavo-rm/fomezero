@@ -1,7 +1,11 @@
-<ul class="menu">
-	<li> Restaurante Fome Zero </li>
-	<%= menu 'Homepage', root_path %>
-	<%= menu 'Restaurants', restaurants_path %>
-	<%= menu 'Dishes', dishes_path %>
-	<%= menu 'Ingredients', ingredients_path %>
-</ul>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<a class="navbar-brand" href="#">Restaurante Fome Zero</a>
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<ul class="navbar-nav mr-auto menu">
+			<%= menu 'Homepage', root_path %> 
+			<%= menu 'Restaurants', restaurants_path %> 
+			<%= menu 'Dishes', dishes_path %> 
+			<%= menu 'Ingredients', ingredients_path %>
+		</ul>
+	</div>
+</nav>
