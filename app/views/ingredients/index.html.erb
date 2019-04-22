@@ -14,9 +14,11 @@
     <% @ingredients.each do |ingredient| %>
       <tr>
         <td><%= ingredient.description %></td>
-        <td><%= link_to 'Show', ingredient %></td>
-        <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><div class="btn-group">
+              <%= link_to 'Mostrar', ingredient, :class => "btn btn-info" %></button>
+              <%= link_to 'Editar', edit_ingredient_path(ingredient), :class => "btn btn-warning" %>
+              <%= link_to 'Excluir', ingredient, :class => "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %></button>
+              </div></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Ingredient', new_ingredient_path %>
+<%= link_to 'New Ingredient', new_ingredient_path, :class => "btn btn-success" %>

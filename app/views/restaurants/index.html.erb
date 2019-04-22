@@ -18,9 +18,13 @@
         <td><%= restaurant.name %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+        <div class="btn-group">
+              <%= link_to 'Mostrar', restaurant, :class => "btn btn-info" %></button>
+              <%= link_to 'Editar', edit_restaurant_path(restaurant), :class => "btn btn-warning" %>
+              <%= link_to 'Excluir', restaurant, :class => "btn btn-danger", method: :delete, data: {confirm: 'Are you sure?'} %></button>
+              </div>
+              </td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+<%= link_to 'New Restaurant', new_restaurant_path, :class => "btn btn-success" %>
