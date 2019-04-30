@@ -13,12 +13,12 @@
 <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-		<% restaurant.dishes.each do |dish| %>
+		<% restaurant.dishes.order(:description).each do |dish| %>
 		      <div class="col-md-4">
 		        <h2><%= dish.description %></h2>
 		        <p>Preço: R$<%= dish.price %> </p>
 		        <p>Tempo de Preparo: <%= dish.preparationtime %> minutos</p>
-		        <p>Ingredientes: <%= dish.ingredients.map(&:description).join(', ') %></p>
+		        <p>Ingredientes: <%= dish.ingredients.order(:description).map(&:description).join(', ') %></p>
 		        <small>Data: <%= dish.created_at %> </small>
 		      </div>
 		<% end %>
